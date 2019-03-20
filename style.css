@@ -1,0 +1,87 @@
+.top {
+    background-image: url(back.jpg);
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    color: white;
+}
+
+.total_budget{
+    text-align: center;
+    font-size: 5em;
+    background-color: burlywood;
+    padding: 10px;
+    border: 1px solid white;
+    color: #061D3C;
+}
+
+#heading{
+    font-size: 2em;
+    margin-top: 30px;
+}
+
+.income{
+    text-align: center;
+    color: gray;
+    background-color: #92C46D;
+    width: 300px;
+    color: #241D3C;
+    font-weight: bold;
+    border: 1px solid white;
+   
+}
+.space{
+    height: 40px;
+}
+
+.expense{
+    text-align: center;
+    color: gray;
+    background-color: #FF6F69;
+    width: 300px;
+    color: #241D3C;
+    font-weight: bold;
+    border: 1px solid white;
+}
+
+.add__btn {
+    font-size: 35px;
+    background: none;
+    border: none;
+    color: #28B9B5;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.1;
+    margin-left: 10px;
+}
+
+.income_row:hover{
+    color: darkgreen;
+    font-weight: bolder;
+    background-color: lightgreen;
+}
+
+.expense_row:hover{
+    color: darkred;
+    font-weight: bolder;
+    background-color: lightcoral;
+}
+
+.delete_btn {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    display: none;
+}
+
+.expense_row:hover .delete_btn{
+    display: block;
+}
+.income_row:hover .delete_btn{
+    display: block;
+}

@@ -1,0 +1,151 @@
+<html>
+
+<head>
+
+    <title>Budget</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <div class="top">
+        <div class="container">
+            <h4 style="text-align: center" id="heading">Budget of March,2019</h4>
+            <br><br>
+            <div class="row ">
+                <div class="col-lg-offset-3 col-lg-5">
+                    <div class="total_budget">
+                        <h1 id="total_budget">+ 23,000 $</h1>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-lg-offset-4">
+                    <div class="income">
+                        <div>Income</div>
+                        <h4 style="color: aliceblue;font-size: 2em" id="income">+ 5000 $</h4>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-offset-4">
+                    <div class="expense">
+                        <div>Income</div>
+                        <h4 style="color: aliceblue;font-size: 2em" id="expense">+ 5000 $</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+    <hr>
+    <div class="bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-1 col-lg-1">
+                    <select class="form-control" id="type">
+                        <option value="inc">+</option>
+                        <option value="dec">-</option>
+                    </select>
+                </div>
+                <div class="col-lg-5">
+                    <input type="text" id="title" class="form-control" placeholder="Title">
+                </div>
+                <div class="col-lg-2">
+                    <input type="number" id="cost" class="form-control" placeholder="Cost $">
+                </div>
+                <div class="col-lg-1">
+                    <button class="add__btn" id="add"><i class="ion-ios-checkmark-outline"></i></button>
+                </div>
+
+            </div>
+
+            <br><br><br>
+
+            <div class="row">
+                <div class="col-lg-offset-1 col-lg-4">
+                    <table class="table">
+                        <th class="success">Income</th>
+                        <th class="success"></th>
+                        <th class="success"></th>
+                        <tr class="income_row">
+                            <td>xyz</td>
+                            <td>xyz</td>
+                            <td>
+                                <button class="delete_btn">
+                                    <i class="ion-ios-close-outline"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="income_row">
+                            <td>xyz</td>
+                            <td>xyz</td>
+                            <td>
+                                <button class="delete_btn">
+                                    <i class="ion-ios-close-outline"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="income_row">
+                            <td>xyz</td>
+                            <td>xyz</td>
+                            <td>
+                                <button class="delete_btn">
+                                    <i class="ion-ios-close-outline"></i>
+                                </button>
+                            </td>
+                        </tr>  
+                    </table>
+                </div>
+
+                <div class="col-lg-offset-2 col-lg-4">
+                    <table class="table">
+                        <th class="danger">Expense</th>
+                        <th class="danger"></th>
+                        <th class="danger"></th>
+                        <tr class="expense_row">
+                            <td>xyz</td>
+                            <td>xyz</td>
+                            <td>
+                                <button class="delete_btn">
+                                    <i class="ion-ios-close-outline"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="expense_row">
+                            <td>xyz</td>
+                            <td>xyz</td>
+                            <td>
+                                <button class="delete_btn">
+                                    <i class="ion-ios-close-outline"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="expense_row">
+                            <td>xyz</td>
+                            <td>xyz</td>
+                            <td>
+                                <button class="delete_btn">
+                                    <i class="ion-ios-close-outline"></i>
+                                </button>
+                            </td>
+                        </tr>  
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 100px"></div>
+    <script src="app.js"></script>
+</body></html>
