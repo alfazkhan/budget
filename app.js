@@ -25,8 +25,8 @@ var budgetController = (function () {
 
     var addItem = function (type, title, cost) {
         var newItem, ID;
-        if (allData.allItems[type] > 0) {
-            ID = allData.allItems[type].length + 1;
+        if (allData.allItems[type].length > 0) {
+            ID = allData.allItems[type].length;
         } else {
             ID = 0
         }
@@ -40,12 +40,16 @@ var budgetController = (function () {
 
     }
     
+    
+    
     var test= function(){return allData};
+    
 
     return {
         add: add,
         addItem: addItem,
-        test : test
+        test : test,
+        
     }
 
 })();
@@ -53,16 +57,33 @@ var budgetController = (function () {
 
 var UIController = (function () {
 
-    return {
-
-        getInput: function () {
+    var getInput= function () {
             return {
                 type: document.getElementById('type').value,
                 title: document.getElementById('title').value,
-                cost: document.getElementById('cost').value
-            };
-        }
+                cost: parseFloat(document.getElementById('cost').value)
+            }
     }
+    
+    var addToUI= function(input)
+    {   
+        var htmlINC="";
+        console.log("Called");
+        if(input.type == 'inc')
+            {
+             htmlINC="<tr class='$type$_row'><td>$title$</td><td>$cost$</td><td><button class='delete_btn'><i class='ion-ios-close-outline'</i></button></td></tr>";
+                htmlINC=htmlINC.replace('$title$',input.title);
+                htmlINC=htmlINC.replace('$cost$',input.cost);
+                htmlINC=htmlINC.replace('$type$',input.type)
+                document.getElementById('income_table').insertAdjacentHTML('beforeend',htmlINC);      
+            }
+    }
+    return {
+                getInput : getInput,
+                addToUI : addToUI
+            };
+        
+    
 })();
 
 var Controller = (function (bgt, ui) {
@@ -70,7 +91,7 @@ var Controller = (function (bgt, ui) {
     //Initialize
     var init = function () {
         document.getElementById('add').addEventListener('click', addData);
-        document.addEventListener('keypress', function (event) {
+        document.addEventListener('keypress', function(event) {
             if (event.keyCode === 13 || event.which === 13) {
                 addData();
             }
@@ -81,15 +102,22 @@ var Controller = (function (bgt, ui) {
     //Get Data
     var addData = function () {
         var input = ui.getInput();
+        console.log(input);
+        //Add Data to List
         bgt.addItem(input.type, input.title, input.cost)
+        //Show Data on UI
+        ui.addToUI(input);
     };
 
-
+    
+    
 
     init();
 
-    //Add Data to List
+    
+    
+    
 
-    //Show Data on UI
+
 
 })(budgetController, UIController);
